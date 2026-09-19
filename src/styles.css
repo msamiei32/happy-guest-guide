@@ -20,6 +20,7 @@
 
 @theme inline {
   --font-sans: "Vazirmatn", Tahoma, sans-serif;
+  --font-display: "Lalezar", "Vazirmatn", sans-serif;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -64,29 +65,29 @@
 
 :root {
   --radius: 0.5rem;
-  --background: oklch(0.975 0.012 91);
-  --foreground: oklch(0.24 0.025 145);
-  --card: oklch(0.995 0.005 91);
-  --card-foreground: oklch(0.24 0.025 145);
-  --popover: oklch(0.995 0.005 91);
-  --popover-foreground: oklch(0.24 0.025 145);
-  --primary: oklch(0.34 0.086 145);
-  --primary-foreground: oklch(0.985 0.008 91);
-  --secondary: oklch(0.34 0.13 24);
-  --secondary-foreground: oklch(0.985 0.008 91);
-  --muted: oklch(0.93 0.018 91);
-  --muted-foreground: oklch(0.48 0.03 95);
-  --accent: oklch(0.74 0.13 86);
-  --accent-foreground: oklch(0.23 0.035 85);
+  --background: oklch(0.985 0.008 83);
+  --foreground: oklch(0.29 0.025 63);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.29 0.025 63);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.29 0.025 63);
+  --primary: oklch(0.48 0.07 73);
+  --primary-foreground: oklch(0.99 0.005 83);
+  --secondary: oklch(0.67 0.105 76);
+  --secondary-foreground: oklch(0.22 0.025 62);
+  --muted: oklch(0.95 0.015 79);
+  --muted-foreground: oklch(0.51 0.025 66);
+  --accent: oklch(0.76 0.115 83);
+  --accent-foreground: oklch(0.25 0.03 63);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.79 0.06 88);
-  --input: oklch(0.79 0.06 88);
-  --ring: oklch(0.64 0.11 86);
-  --wine: oklch(0.34 0.13 24);
-  --gold: oklch(0.74 0.13 86);
-  --forest: oklch(0.34 0.086 145);
-  --ink: oklch(0.18 0.018 245);
+  --border: oklch(0.86 0.035 78);
+  --input: oklch(0.86 0.035 78);
+  --ring: oklch(0.67 0.105 76);
+  --wine: oklch(0.56 0.075 69);
+  --gold: oklch(0.76 0.115 83);
+  --forest: oklch(0.37 0.045 75);
+  --ink: oklch(0.27 0.025 62);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -160,16 +161,21 @@
   --color-ink: var(--ink);
 }
 
-@keyframes welcome-out { 0%, 75% { opacity: 1; visibility: visible; } 100% { opacity: 0; visibility: hidden; } }
-@keyframes logo-rise { from { opacity: 0; transform: translateY(18px) scale(.94); } to { opacity: 1; transform: translateY(0) scale(1); } }
+@keyframes welcome-out { 0%, 84% { opacity: 1; visibility: visible; } 100% { opacity: 0; visibility: hidden; } }
+@keyframes logo-rise { from { opacity: 0; transform: translateY(24px) scale(.88); filter: blur(8px); } to { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); } }
 @keyframes progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes draw-line { from { transform: scaleX(0); opacity: 0; } to { transform: scaleX(1); opacity: 1; } }
+@keyframes float-soft { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+@keyframes reveal-up { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
 
-@utility welcome-screen { animation: welcome-out 2.8s ease forwards; }
-@utility welcome-logo { animation: logo-rise .8s ease-out both; }
-@utility welcome-progress { transform-origin: right; animation: progress 2.2s .2s ease-in-out both; }
+@utility welcome-screen { animation: welcome-out 4.5s cubic-bezier(.65,0,.35,1) forwards; }
+@utility welcome-logo { animation: logo-rise 1.15s .25s cubic-bezier(.22,1,.36,1) both, float-soft 3s 1.5s ease-in-out infinite; }
+@utility welcome-progress { transform-origin: right; animation: progress 3.6s .45s ease-in-out both; }
+@utility ornamental-line { transform-origin: center; animation: draw-line 1.2s .7s ease-out both; }
+@utility hero-reveal { animation: reveal-up .9s 4s ease-out both; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .welcome-screen { animation-duration: .35s; }
-  .welcome-logo, .welcome-progress { animation: none; }
+  .welcome-logo, .welcome-progress, .ornamental-line, .hero-reveal { animation: none; }
 }
