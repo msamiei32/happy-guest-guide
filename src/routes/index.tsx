@@ -11,7 +11,8 @@ import noticeAsset from "@/assets/hotel-notice.jpeg.asset.json";
 import historyAsset from "@/assets/hotel-history.jpg.asset.json";
 import mapAsset from "@/assets/hotel-map.jpg.asset.json";
 import scheduleAsset from "@/assets/shuttle-schedule.jpg.asset.json";
-import lobbyImage from "@/assets/talaeeyeh-lobby.jpg";
+import lobbyAsset from "@/assets/hotel-lobby-real.jpg.asset.json";
+const lobbyImage = lobbyAsset.url;
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -79,7 +80,7 @@ function Index() {
       </header>
 
       <section id="top" className="relative min-h-[620px] overflow-hidden md:min-h-[700px]">
-        <img src={lobbyImage} width={1536} height={1024} alt="فضای گرم و آرام لابی هتل طلائیه" className="absolute inset-0 h-[72%] w-full object-cover md:h-full" />
+        <img src={lobbyImage} width={1280} height={568} alt="فضای گرم و آرام لابی هتل طلائیه" className="absolute inset-0 h-[72%] w-full object-cover md:h-full" />
         <div className="absolute inset-0 bg-gradient-to-b from-ink/25 via-transparent to-background md:bg-gradient-to-r md:from-background/95 md:via-background/55 md:to-transparent" />
         <div className="hero-reveal relative mx-auto flex min-h-[620px] max-w-6xl flex-col items-center justify-end px-6 pb-12 text-center md:min-h-[700px] md:items-start md:justify-center md:pb-0 md:text-right">
           <div className="mb-5 flex items-center gap-3 text-secondary"><span className="h-px w-10 bg-secondary"/><span className="text-xs font-bold">میزبانی به رسم اصالت</span></div>
