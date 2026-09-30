@@ -2,9 +2,10 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { BedDouble, Bus, Coffee, ConciergeBell, MapPin, Maximize2, Phone, ScrollText, UtensilsCrossed, X } from "lucide-react";
 import logoAsset from "@/assets/hotel-logo.png.asset.json";
-import lunchAsset from "@/assets/lunch-menu.jpg.asset.json";
-import dinnerAsset from "@/assets/dinner-menu.jpg.asset.json";
-import cafeAsset from "@/assets/cafe-menu.jpeg.asset.json";
+import lunchAsset from "@/assets/lunch-menu-v2.jpg.asset.json";
+import dinnerAsset from "@/assets/dinner-menu-v2.jpg.asset.json";
+import cafeAsset from "@/assets/cafe-menu-v2.jpg.asset.json";
+
 import memorialAsset from "@/assets/hotel-memorial.jpeg.asset.json";
 import guideAsset from "@/assets/guest-guide.jpeg.asset.json";
 import noticeAsset from "@/assets/hotel-notice.jpeg.asset.json";
