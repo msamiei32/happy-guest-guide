@@ -1,18 +1,17 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { BedDouble, Bus, Coffee, ConciergeBell, MapPin, Maximize2, Phone, ScrollText, UtensilsCrossed, X } from "lucide-react";
-import logoAsset from "@/assets/hotel-logo.png.asset.json";
-import lunchAsset from "@/assets/lunch-menu-v2.jpg.asset.json";
-import dinnerAsset from "@/assets/dinner-menu-v2.jpg.asset.json";
-import cafeAsset from "@/assets/cafe-menu-v2.jpg.asset.json";
-
-import memorialAsset from "@/assets/hotel-memorial.jpeg.asset.json";
-import guideAsset from "@/assets/guest-guide.jpeg.asset.json";
-import noticeAsset from "@/assets/hotel-notice.jpeg.asset.json";
-import historyAsset from "@/assets/hotel-history.jpg.asset.json";
-import mapAsset from "@/assets/hotel-map.jpg.asset.json";
-import lobbyAsset from "@/assets/hotel-lobby-real.jpg.asset.json";
-const lobbyImage = lobbyAsset.url;
+// تصاویر از پوشه public/images خوانده می‌شوند تا روی هر سروری لود شوند
+const logoImage = "/images/hotel-talaeeyeh-logo.png";
+const lunchImage = "/images/lunch-menu-v2.jpg";
+const dinnerImage = "/images/dinner-menu-v2.jpg";
+const cafeImage = "/images/cafe-menu-v2.jpg";
+const memorialImage = "/images/hotel-memorial.jpeg";
+const guideImage = "/images/guest-guide.jpeg";
+const noticeImage = "/images/hotel-notice.jpeg";
+const historyImage = "/images/hotel-history.jpg";
+const mapImage = "/images/hotel-map.jpg";
+const lobbyImage = "/images/hotel-lobby-real.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
